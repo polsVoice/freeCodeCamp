@@ -1,0 +1,8 @@
+section {
+    background-position: fixed;
+    height: 100%;
+}
+
+#top {
+    background-image: url( "img/the_season.jpg" );
+}
