@@ -4,6 +4,10 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
+body > button {
+    transition: all 0.3s ease 0s;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -26,6 +30,7 @@ header nav ul li {
 header h1 {
     background-color: #efefef;
     margin: 0;
+    padding: 1%;
     display: inline-block;
 }
 
@@ -42,8 +47,19 @@ section {
     background-image: url( "img/the_season.jpg" );
 }
 
+#top, #projects {
+    text-align: center;
+}
+
 #bio {
     background-image: url( "img/green-plant-wallpaper.jpg" );
+    padding: 6%;
+}
+
+#bio img {
+    border-radius: 180px;
+    float: right;
+    margin: 3%;
 }
 
 #projects {
