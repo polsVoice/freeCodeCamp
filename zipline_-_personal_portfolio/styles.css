@@ -1,8 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header nav {
+    float: right;
+}
+
+header, header nav ul {
+    background-color: #b1b0af;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    padding: 0.5em;
+}
+
+header h1 {
+    background-color: #efefef;
+    margin: 0;
+    display: inline-block;
+}
+
+header nav ul li:hover {
+    background-color: #efefef;
+}
+
 section {
-    background-position: fixed;
+    background-attachment: fixed;
     height: 100%;
 }
 
 #top {
     background-image: url( "img/the_season.jpg" );
+}
+
+#bio {
+    background-image: url( "img/green-plant-wallpaper.jpg" );
+}
+
+#projects {
+    background-image: url( "img/poppy-seed-head-macro.jpg" );
+}
+#contact {
+    background-image: url( "img/the-season-2.jpg" );
 }
