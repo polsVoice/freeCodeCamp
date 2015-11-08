@@ -13,18 +13,18 @@ a {
     color: inherit;
 }
 
+header a:hover {
+    text-decoration: none;
+    color: #333;    
+}
+
 header nav {
     float: right;
 }
 
 header, header nav ul {
-    background-color: #b1b0af;
+    background-color: #BFBFBF;
     margin: 0;
-}
-
-header nav ul li {
-    display: inline-block;
-    padding: 0.5em;
 }
 
 header h1 {
@@ -34,8 +34,22 @@ header h1 {
     display: inline-block;
 }
 
-header nav ul li:hover {
+header nav ul li {
+    display: inline-block;
+    padding: 0.5em;
+    margin: 0.85em 0 0;
+}
+
+header nav ul li a:hover {
     background-color: #efefef;
+}
+
+header nav ul li a {
+    padding: 1.35em;
+}
+
+button .fa {
+    margin: 0 .25em 0 0;
 }
 
 section {
@@ -43,8 +57,13 @@ section {
     height: 100%;
 }
 
+section h1 {
+    margin: 0;
+}
+
 #top {
     background-image: url( "img/the_season.jpg" );
+    height: 700px;
 }
 
 #top, #projects {
@@ -69,7 +88,23 @@ section {
     background-image: url( "img/the-season-2.jpg" );
 }
 
+#top h1 {
+    font-size: 52px;
+    color: #B3B3B3;
+    -webkit-text-stroke: 1px white;
+    text-shadow: -3px -1px 0px #fff;
+}
+
+.btn-default {
+    transition: transform 0.35s;
+    margin: 0.65em;
+    padding: 1.5% 1%;
+    box-shadow: 4px 4px 5px #333;
+}
+
 .btn-default:hover {
     color: #fff;
     background-color: #333;
+    transform: scale(1.05, 1.05);
+    border: 2px solid #fff;
 }
