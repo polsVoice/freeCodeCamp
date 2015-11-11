@@ -96,10 +96,14 @@ section h1 {
     text-shadow: -3px -1px 0px #fff;
 }
 
+#buttonbar {
+}
+
 .btn-default {
     transition: transform 0.35s;
     margin: 0.85em;
-    padding: 1;
+    padding: 0.75em;
+    border-radius: 10px;
     box-shadow: 4px 4px 5px #333;
 }
 
