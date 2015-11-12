@@ -96,36 +96,33 @@ section h1 {
     text-shadow: -3px -1px 0px #fff;
 }
 
-#buttonbar {
+.buttonbar .fcc {
+    background-image: url("img/fcc_logo_black.svg");
+    background-size: 18%;
+    background-repeat: no-repeat;
+    padding-left: 2.95em;
+    background-position: 6%;
 }
 
-.fcc:before {
-    content: url("img/fcc_logo.png");
+.buttonbar .fcc:hover {
+    background-image: url("img/fcc_logo_white.svg");
+    
 }
 
-/*
-.fcc:hover:before {
-    content: url("img/fcc_logo_white.png");
-}
-*/
-
-.btn-default {
-    transition: transform 0.35s;
+.bigButton {
+    transition: transform 0.05s;
     margin: 0.85em;
     padding: 0.75em;
     border-radius: 10px;
     box-shadow: 4px 4px 5px #333;
+    font-size: 1.25em;
 }
 
-.btn-default:hover {
+.bigButton:hover {
     color: #fff;
     background-color: #333;
     transform: scale(1.05, 1.05);
     border: 2px solid #fff;
-}
-
-.btn-default:hover .fcc {
-    content: url("img/fcc_logo_white.png");
 }
 
 #contact>p {
