@@ -23,12 +23,11 @@ header nav {
 }
 
 header, header nav ul {
-    background-color: #BFBFBF;
+    background-color: #dedede;
     margin: 0;
 }
 
 header h1 {
-    background-color: #efefef;
     margin: 0;
     padding: 1%;
     display: inline-block;
@@ -40,6 +39,7 @@ header nav ul li {
     margin: 1.55em 0 0;
 }
 
+header h1:hover,
 header nav ul li a:hover {
     background-color: #efefef;
 }
@@ -71,7 +71,7 @@ section h1 {
 }
 
 #bio {
-    background-image: url( "img/green-plant-wallpaper.jpg" );
+    background-image: url( "img/beach.jpg" );
     padding: 6%;
     font-weight: bold;
 }
@@ -83,7 +83,7 @@ section h1 {
 }
 
 #projects {
-    background-image: url( "img/poppy-seed-head-macro.jpg" );
+    background-image: url( "img/sun-rays-on-the-snow-in-the-morning.jpg" );
 }
 #contact {
     background-image: url( "img/the-season-2.jpg" );
@@ -99,6 +99,16 @@ section h1 {
 #buttonbar {
 }
 
+.fcc:before {
+    content: url("img/fcc_logo.png");
+}
+
+/*
+.fcc:hover:before {
+    content: url("img/fcc_logo_white.png");
+}
+*/
+
 .btn-default {
     transition: transform 0.35s;
     margin: 0.85em;
@@ -112,4 +122,12 @@ section h1 {
     background-color: #333;
     transform: scale(1.05, 1.05);
     border: 2px solid #fff;
+}
+
+.btn-default:hover .fcc {
+    content: url("img/fcc_logo_white.png");
+}
+
+#contact>p {
+    margin-top: 0;
 }
