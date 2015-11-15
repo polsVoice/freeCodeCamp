@@ -2,6 +2,7 @@
 
 body {
     font-family: "Open Sans", sans-serif;
+    margin: 0;
 }
 
 body > button {
@@ -96,7 +97,19 @@ section h1 {
     text-shadow: -3px -1px 0px #fff;
 }
 
-.buttonbar .fcc {
+.buttonbar {
+    text-align: center;
+}
+
+#projectGallery div div {
+    float: left;
+    border: 1px solid black;
+    width: 33%;
+    margin: 1% 0;
+    text-align: center;
+}
+
+.buttonbar #fccBtn {
     background-image: url("img/fcc_logo_black.svg");
     background-size: 18%;
     background-repeat: no-repeat;
@@ -104,7 +117,7 @@ section h1 {
     background-position: 6%;
 }
 
-.buttonbar .fcc:hover {
+.buttonbar #fccBtn:hover {
     background-image: url("img/fcc_logo_white.svg");
     
 }
@@ -116,15 +129,20 @@ section h1 {
     border-radius: 10px;
     box-shadow: 4px 4px 5px #333;
     font-size: 1.25em;
+    background-color: rgb(221,221,221);
 }
 
 .bigButton:hover {
     color: #fff;
     background-color: #333;
-    transform: scale(1.05, 1.05);
+    transform: translate(0px,-1px) scale(1.05, 1.05);
     border: 2px solid #fff;
 }
 
-#contact>p {
+.description {
+    background-color: #fff;
+}
+
+#contact > p {
     margin-top: 0;
 }

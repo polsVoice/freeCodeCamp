@@ -3,8 +3,6 @@
 	<head>
 		<meta charset="UTF-8" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
-        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-        -->
 		<link href="styles.css" rel="stylesheet" />
 		<title>Title</title>
 	</head>
@@ -15,8 +13,8 @@
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#bio">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
@@ -25,16 +23,17 @@
             <!-- Probably need a different font here -->
             <h1>Brent Bartlett Web Development</h1>
             <h2>Awesome stuff is awesome.</h2>
+            <hr />
             <div class="buttonbar">
-                <button class="bigButton"><span class="fa fa-twitter fa-lg"></span>Twitter
-                </button>
-                <button class="bigButton"><span class="fa fa-github fa-lg"></span>GitHub
-                </button>
-                <button class="bigButton"><span class="fa fa-linkedin fa-lg"></span>LinkedIn
-                </button>
-                <button class="bigButton fcc">
+                <a class="bigButton" id="twitterBtn" href="https://twitter.com/BrentBartlettBC"><span class="fa fa-twitter fa-lg"></span>Twitter
+                </a>
+                <a class="bigButton" id="githubBtn" href="https://github.com/polsVoice"><span class="fa fa-github fa-lg"></span>GitHub
+                </a>
+                <a class="bigButton" id="linkedinBtn" href="https://www.linkedin.com/in/brentbartlett"><span class="fa fa-linkedin fa-lg"></span>LinkedIn
+                </a>
+                <a class="bigButton" id="fccBtn" href="http://www.freecodecamp.com/polsvoice">
                     freeCodeCamp
-                </button>
+                </a>
             </div>
         </section>
         <section id="bio">
@@ -46,38 +45,55 @@
             <p>Vestibulum vel neque magna. Cras vulputate nibh a lectus congue pellentesque. Proin neque urna, consectetur quis mollis ac, semper sagittis ex. Nunc bibendum erat ac congue lobortis. Aenean cursus commodo tempor. Fusce bibendum, nisl vehicula porta viverra, quam nunc viverra urna, et vulputate erat dui quis libero. Sed sit amet placerat leo. Praesent eu turpis id nisi ultricies mollis ac at nisi. Aliquam commodo leo eu sollicitudin blandit.
             </p>
         </section>
-        <section id="projects">
+        <section id="portfolio">
             <h1>Portfolio Dolio</h1>
             <h2>Dolio do. The portfolio of the flow</h2>
-            <div>
-                <div>project #1
+            <div id="projectGallery">
+                <div>
+                    <div>
+                        <img src="img/aae_site.png" alt="American Association of Endodontists site" />
+                        <p class="description">American Association of Endodontists site</p>
+                    </div>
+                    <div>
+                        <img src="img/bellarmine_site.png" alt="Bellarmine University site" />
+                        <p class="description">Bellarmine University site</p>
+                    </div>
+                    <div>
+                        <img src="img/beloit_site.png" alt="Beloit College site" />
+                        <p class="description">Beloit College site</p>
+                    </div>
                 </div>
-                <div>project #2
-                </div>
-                <div>project #3
-                </div>
-            </div>
-            <div>
-                <div>project #4
-                </div>
-                <div>project #5
-                </div>
-                <div>project #6
+                <div>
+                    <div>
+                        <img src="img/cht_site.png" alt="Community Hospice of Texas site" />
+                        <p class="description">Community Hospice of Texas site</p>
+                    </div>
+                    <div>
+                        <img src="img/calculator.png" alt="JavaScript Calculator" />
+                        <p class="description">JavaScript calculator</p>
+                    </div>
+                    <div>
+                        <img src="img/seed.png" alt=".seed. to-do list app" />
+                        <p class="description">.seed. task manager app</p>
+                    </div>
                 </div>
             </div>
         </section>
         <section id="contact">
             <p>Connect with Brent for stuff
             </p>
+            <!-- Find a way to add this as a shared resource, instead of just copying
+            -->
             <div class="buttonbar">
-                <button class="bigButton"><span class="fa fa-twitter fa-lg"></span>Twitter
-                </button>
-                <button class="bigButton"><span class="fa fa-github fa-lg"></span>GitHub
-                </button>
-                <button class="bigButton"><span class="fa fa-linkedin fa-lg"></span>LinkedIn
-                </button>
-                <button class="bigButton fcc">freeCodeCamp
-                </button>
+                <a class="bigButton" id="twitterBtn" href="https://twitter.com/BrentBartlettBC"><span class="fa fa-twitter fa-lg"></span>Twitter
+                </a>
+                <a class="bigButton" id="githubBtn" href="https://github.com/polsVoice"><span class="fa fa-github fa-lg"></span>GitHub
+                </a>
+                <a class="bigButton" id="linkedinBtn" href="https://www.linkedin.com/in/brentbartlett"><span class="fa fa-linkedin fa-lg"></span>LinkedIn
+                </a>
+                <a class="bigButton" id="fccBtn" href="http://www.freecodecamp.com/polsvoice">
+                    freeCodeCamp
+                </a>
             </div>
         </section>
         <!-- image dimensions (width x height)
@@ -87,11 +103,11 @@
         1380 x 780
         -->
         <footer>
-            <ul>
+            <ul id="contact">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#bio">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </footer>
 	</body>
