@@ -14,10 +14,12 @@
 
 var test = {
     init: function( obj ){
+		var quotesArr = obj.getQuotes( "quotes.txt" );
         assert( obj.hasOwnProperty( "getQuotes" ),
             "getQuotes exists" );
-        assert( Array.isArray( obj.getQuotes( "quotes.txt" ) ),
-            "getQuotes returns an array" ); 
-    }
+        assert( quotesArr instanceof Array,
+            "getQuotes returns an array" );
+        console.log( typeof quotesArr );
+	}
 };
 test.init( gen );

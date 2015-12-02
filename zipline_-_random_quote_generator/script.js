@@ -3,6 +3,7 @@ var gen = {
         $.get( file, function( data ){
             var quotes = data.split( /\n\./ );
             console.log( quotes );
+            //~ console.log( quotes instanceof Array );
             return quotes;
         } );
     },
