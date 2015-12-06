@@ -4,8 +4,8 @@
         <link rel="stylesheet" 
             href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 		<link href="styles.css" rel="stylesheet" />
-		<link href="test_styles.css" rel="stylesheet" />
-        <link rel="stylesheet" href="lib/jasmine-2.3.4/jasmine.css">
+        <link rel="stylesheet" href="jasmine-2.3.4/jasmine.css">
+        <link rel="shortcut icon" type="image/png" href="jasmine-2.3.4/jasmine_favicon.png">
 		<title>Title</title>
 	</head>
 	<body>
@@ -14,12 +14,14 @@
         <q id="quote">
         </q>
         <!-- include live-server for testing -->
-        <ul id="results">
-        </ul>
+        <script type="text/javascript" src="jasmine-2.3.4/console.js"></script>
+        <script type="text/javascript" src="jasmine-2.3.4/jasmine.js"></script>
+        <script type="text/javascript" src="jasmine-2.3.4/jasmine-html.js"></script>
+        <script type="text/javascript" src="jasmine-2.3.4/boot.js"></script>
         <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
         </script>
         <script src="script.js"></script>
-        <script src="test.js"></script>
+        <script src="script_spec.js"></script>
 	</body>
 </html>

@@ -9,6 +9,7 @@ var gen = {
             url: file,
             success: function(data){
                 var response = data.split( /\n\./ );
+                //~ console.log(response);
                 callback.call(this, response);
             }
         });
