@@ -1,1 +1,8 @@
-
+#quote {
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+    border: 1px solid #aaa;
+    padding: 2em;
+    border-radius: 16px;
+}

@@ -2,7 +2,7 @@ var gen = {
     regex: /\n\./,
     file: "quotes.txt",
     getQuotes: function(file, callback, regex){
-        return $.ajax({
+        $.ajax({
             type: "GET",
             url: file,
             success: function(data){
@@ -12,10 +12,7 @@ var gen = {
             fail: function(xhr, stat, err){
                 console.log(err);
             }
-        
-        // getQuotes() must return a promise in order to
-        // use $.when().done()
-        }).promise();
+        });
     },
     randomNumber: function(min,max){
         return Math.floor(Math.random()*(max-min+1)+min);
@@ -25,6 +22,12 @@ var gen = {
         return arr[randNum];
     },
     init: function(){
+        $("#theButton").on("click", function(){
+            gen.getQuotes(gen.file, function(data){
+                var randQuote = gen.returnRandomElm(data);
+                $("#quote").text(randQuote);
+            }, gen.regex);
+        });
     }
 };
 gen.init();
