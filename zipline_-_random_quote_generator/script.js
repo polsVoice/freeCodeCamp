@@ -25,7 +25,12 @@ var gen = {
         $("#theButton").on("click", function(){
             gen.getQuotes(gen.file, function(data){
                 var randQuote = gen.returnRandomElm(data);
-                $("#quote").text(randQuote);
+                randQuote = randQuote.split( /[\.\n]*--/ );
+                
+                // If it's attributed, format the attribution;
+                // if not, leave it blank
+                randQuote[1] = randQuote[1] ? "&ndash; " + randQuote[1] : "";
+                $("#quote").html("&ldquo;" + randQuote[0] + '&rdquo;<br/>' + randQuote[1]);
             }, gen.regex);
         });
     }
