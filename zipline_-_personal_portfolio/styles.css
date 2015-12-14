@@ -30,23 +30,18 @@ header, header nav ul {
 
 header h1 {
     margin: 0;
-    padding: 1%;
+    padding: 4%;
     display: inline-block;
 }
 
 header nav ul li {
     display: inline-block;
-    padding: 0 0.5em;
-    margin: 1.55em 0 0;
+    padding: 1.35em;
 }
 
 header h1:hover,
 header nav ul li a:hover {
     background-color: #efefef;
-}
-
-header nav ul li a {
-    padding: 1.35em;
 }
 
 button .fa {
@@ -78,7 +73,6 @@ section h1 {
 }
 
 #bio img {
-    border-radius: 180px;
     float: right;
     margin: 3%;
 }
@@ -97,8 +91,16 @@ section h1 {
     text-shadow: -3px -1px 0px #fff;
 }
 
+.container:first-of-type {
+    background-color: #B3B1B0;
+}
+
 .buttonbar {
     text-align: center;
+}
+
+.bigButton span {
+    margin-right: 0.35em;
 }
 
 #projectGallery div div {
@@ -123,7 +125,7 @@ section h1 {
 }
 
 .bigButton {
-    transition: transform 0.05s;
+    -webkit-transition: transform ease-in 0.05s;
     margin: 0.85em;
     padding: 0.75em;
     border-radius: 10px;
@@ -136,7 +138,7 @@ section h1 {
     color: #fff;
     background-color: #333;
     transform: translate(0px,-1px) scale(1.05, 1.05);
-    border: 2px solid #fff;
+    text-decoration: none;
 }
 
 .description {

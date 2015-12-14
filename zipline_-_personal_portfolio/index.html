@@ -1,23 +1,30 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
 		<link href="styles.css" rel="stylesheet" />
 		<title>Title</title>
 	</head>
 	<body>
-        <header>
-            <h1><a href="#">Brent Bartlett</a>
-            </h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#bio">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+        <div class="container">
+            <header>
+                <div class="col-xs-4">
+                    <h1><a href="#">Brent Bartlett</a>
+                    </h1>
+                </div>
+                <div class="col-xs-8">
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#bio">About</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
         <section id="top">
             <!-- Probably need a different font here -->
             <h1>Brent Bartlett Web Development</h1>
@@ -36,7 +43,7 @@
             </div>
         </section>
         <section id="bio">
-            <img src="http://starjelly.net/files/portfolio_assets/img/brent.jpg" alt="Picture of Brent" />
+            <img class="img-circle" src="http://starjelly.net/files/portfolio_assets/img/brent.jpg" alt="Picture of Brent" />
             <h1>Brent Bartlett Web Design</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique accumsan felis non maximus. Praesent in luctus arcu. Curabitur ultrices sagittis sapien id posuere. Vestibulum euismod magna eu lacinia fermentum. Aliquam erat volutpat. Aliquam cursus, odio vitae sagittis bibendum, ipsum neque lacinia tellus, in commodo nibh purus id est. In dignissim quam eget eleifend vestibulum. Quisque lacinia elementum egestas. Aenean nec nulla ipsum. Praesent non sapien ut dolor vulputate consequat. Nunc imperdiet pretium dolor ut iaculis. Quisque dictum arcu eget velit mollis, eu elementum quam congue. Morbi a fringilla felis. Donec euismod dui tincidunt viverra placerat. In posuere tempus nisi vel pellentesque. Suspendisse placerat purus libero, et consectetur nunc placerat et.
             </p>
@@ -109,5 +116,6 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </footer>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</body>
 </html>
