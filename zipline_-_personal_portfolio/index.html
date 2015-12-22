@@ -9,20 +9,24 @@
 	<body>
         <div class="container">
             <header>
-                <div class="col-xs-4">
-                    <h1><a href="#">Brent Bartlett</a>
-                    </h1>
-                </div>
-                <div class="col-xs-8">
-                    <nav>
-                        <ul>
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Brent Bartlett</a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navLinks" aria-expanded="false">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navLinks" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
                             <li><a href="#">Home</a></li>
                             <li><a href="#bio">About</a></li>
                             <li><a href="#portfolio">Portfolio</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
-                    </nav>
-                </div>
+                    </div>
+                </nav>
             </header>
         </div>
         <section id="top">
@@ -116,6 +120,7 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </footer>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</body>
 </html>

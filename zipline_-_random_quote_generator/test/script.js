@@ -25,7 +25,7 @@ var gen = {
         $("#theButton").on("click", function(){
             gen.getQuotes(gen.file, function(data){
                 var randQuote = gen.returnRandomElm(data);
-                randQuote = randQuote.split( /[\.\n]*--/ );
+                randQuote = randQuote.split( /[\.\n]?--/ );
                 
                 // If it's attributed, format the attribution;
                 // if not, leave it blank

@@ -29,8 +29,6 @@ header, header nav ul {
 }
 
 header h1 {
-    margin: 0;
-    padding: 4%;
     display: inline-block;
 }
 
@@ -40,7 +38,7 @@ header nav ul li {
 }
 
 header h1:hover,
-header nav ul li a:hover {
+header nav ul li:hover {
     background-color: #efefef;
 }
 
@@ -89,10 +87,6 @@ section h1 {
     color: #B3B3B3;
     -webkit-text-stroke: 1px white;
     text-shadow: -3px -1px 0px #fff;
-}
-
-.container:first-of-type {
-    background-color: #B3B1B0;
 }
 
 .buttonbar {
