@@ -1,3 +1,7 @@
+#theButton {
+    margin: 3% 25% 2%;
+}
+
 #quote {
     margin: 0 auto;
     display: block;
@@ -5,9 +9,18 @@
     border: 1px solid #aaa;
     padding: 2em;
     border-radius: 16px;
-    box-shadow: 4px 4px 5px 1px #aaa;
 }
 
 q:before, q:after {
     content: "";
+}
+
+#container {
+    float: right;
+    margin-right: 25%;
+    margin-top: 3%;
+}
+
+#theButton, #quote, #container {
+    box-shadow: 4px 4px 5px 1px #aaa;
 }

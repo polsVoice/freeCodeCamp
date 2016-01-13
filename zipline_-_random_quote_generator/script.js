@@ -22,16 +22,22 @@
 
 var gen = {
     regex: /\n\./,
-    file: "quotes.txt",
+    file: "https://s3-us-west-2.amazonaws.com/randquotes/quotes.txt",
     getQuotes: function(file, callback, regex){
         $.ajax({
             type: "GET",
             url: file,
+            contentType: "text/plain",
+            xhrFields: {
+                withCredentials: false
+            },
+            headers: {},
             success: function(data){
+                console.log( "file retrieved" );
                 var response = data.split(regex);
                 callback.call(this, response);
             },
-            fail: function(xhr, stat, err){
+            error: function(xhr, stat, err){
                 console.log(err);
             }
         });
@@ -43,23 +49,37 @@ var gen = {
         var randNum = gen.randomNumber(0, arr.length-1);
         return arr[randNum];
     },
+    formatQuote: function(str, regex){
+        var quoteArr = str.split(regex),
+            fQuote;
+        
+        // If it's attributed, format the attribution;
+        // if not, leave it blank
+        console.log("quoteArr[0] is " + quoteArr[0] + "and quoteArr[1] is " + quoteArr[1]);
+        quoteArr[1] = quoteArr[1] ? " --- " + quoteArr[1] : "";
+        fQuote = '"' + quoteArr[0] + '"' + quoteArr[1];
+        fQuote = fQuote.replace(/\r?\n|\r/g, "");
+        console.log(fQuote);
+        return fQuote;
+    },
     init: function(){
         $("#twitterButton").attr("data-text", "YOLO");
         $("#theButton").on("click", function(){
             gen.getQuotes(gen.file, function(data){
                 var randQuote = gen.returnRandomElm(data),
                     formattedQuote;
-                randQuote = randQuote.split( /[\.\n]*--/ );
-                
-                // If it's attributed, format the attribution;
-                // if not, leave it blank
-                randQuote[1] = randQuote[1] ? "&ndash; " + randQuote[1] : "";
-                formattedQuote = "&ldquo;" + randQuote[0] + '&rdquo;<br/>' + randQuote[1];
+                formattedQuote = gen.formatQuote(randQuote, /[\.\n]*--/);
                 $("#quote").html(formattedQuote);
+                if($("#container iframe")){
+                    $("#container iframe").remove();
+                }
                 twttr.widgets.createShareButton(
-                    'https://dev.twitter.com/',
+                    window.location,
                     document.getElementById('container'),
-                    {text: formattedQuote});
+                    {text: formattedQuote})
+                .then(function(){
+                    console.log("Button added");
+                });
             }, gen.regex);
         });
     }

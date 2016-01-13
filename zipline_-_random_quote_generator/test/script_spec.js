@@ -29,3 +29,9 @@ describe("Random quote", function(){
         done();
     });
 });
+describe("Formatted quote", function(){
+    it("removes line breaks", function(){
+        expect(gen.formatQuote(".\nC++ tries to guard against Murphy, not Machiavelli.\n -- Damian Conway", /[\.\n]*--/))
+            .toEqual("C++ tries to guard against Murphy, not Machiavelli. --- Damian Conway");
+    });
+});
