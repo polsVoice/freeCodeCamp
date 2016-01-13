@@ -22,16 +22,22 @@
 
 var gen = {
     regex: /\n\./,
-    file: "quotes.txt",
+    file: "https://s3-us-west-2.amazonaws.com/randquotes/quotes.txt",
     getQuotes: function(file, callback, regex){
         $.ajax({
             type: "GET",
             url: file,
+            contentType: "text/plain",
+            xhrFields: {
+                withCredentials: false
+            },
+            headers: {},
             success: function(data){
+                console.log( "file retrieved" );
                 var response = data.split(regex);
                 callback.call(this, response);
             },
-            fail: function(xhr, stat, err){
+            error: function(xhr, stat, err){
                 console.log(err);
             }
         });
