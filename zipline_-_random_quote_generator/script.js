@@ -19,7 +19,6 @@
     }(document, "script", "twitter-wjs"));
 })();
 
-
 var gen = {
     regex: /\n\./,
     file: "https://s3-us-west-2.amazonaws.com/randquotes/quotes.txt",
