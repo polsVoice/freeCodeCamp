@@ -63,7 +63,6 @@ var gen = {
         return fQuote;
     },
     init: function(){
-        $("#twitterButton").attr("data-text", "YOLO");
         $("#theButton").on("click", function(){
             gen.getQuotes(gen.file, function(data){
                 var randQuote = gen.returnRandomElm(data),
