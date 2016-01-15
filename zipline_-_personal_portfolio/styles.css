@@ -91,6 +91,7 @@ section h1 {
 
 .buttonbar {
     text-align: center;
+    margin-left: 3%;
 }
 
 .bigButton span {
@@ -109,8 +110,9 @@ section h1 {
     background-image: url("img/fcc_logo_black.svg");
     background-size: 18%;
     background-repeat: no-repeat;
-    padding-left: 2.95em;
-    background-position: 6%;
+    background-position: 45% 25%;
+    padding-top: 2%;
+    font-size: .75em;
 }
 
 .buttonbar #fccBtn:hover {
@@ -126,13 +128,19 @@ section h1 {
     box-shadow: 4px 4px 5px #333;
     font-size: 1.25em;
     background-color: rgb(221,221,221);
+    display: block;
 }
 
 .bigButton:hover {
     color: #fff;
     background-color: #333;
-    transform: translate(0px,-1px) scale(1.05, 1.05);
+    transform: translate(0px,-1px) scale(1.15);
     text-decoration: none;
+}
+
+.buttonBar .bigButton {
+    width: 8%;
+    margin-left: 0;
 }
 
 .description {
