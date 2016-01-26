@@ -14,13 +14,13 @@ a {
     color: inherit;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 header a:hover {
     text-decoration: none;
     color: #333;    
-}
-
-header nav {
-    float: right;
 }
 
 header, header nav ul {
@@ -64,22 +64,18 @@ section h1 {
     text-align: center;
 }
 
-#bio {
-    background-image: url( "img/beach.jpg" );
-    padding: 6%;
-    font-weight: bold;
-}
-
-#bio img {
-    float: right;
+#top img {
+    float: left;
     margin: 3%;
+    height: 32%;
 }
 
-#projects {
-    background-image: url( "img/sun-rays-on-the-snow-in-the-morning.jpg" );
-}
-#contact {
-    background-image: url( "img/the-season-2.jpg" );
+#top p {
+    background-color: #d9edf7;
+    margin: 1.5% 15% 1.5% 12%;
+    border-radius: 10px;
+    padding: 1%;
+    text-align: left;
 }
 
 #top h1 {
@@ -89,9 +85,25 @@ section h1 {
     text-shadow: -3px -1px 0px #fff;
 }
 
+.nav.navbar-nav {
+    float: right;
+}
+
+.navbar-header .navbar-brand {
+    font-size: 4em;
+}
+
+#projects {
+    background-image: url( "img/sun-rays-on-the-snow-in-the-morning.jpg" );
+}
+#contact {
+    background-image: url( "img/the-season-2.jpg" );
+}
+
 .buttonbar {
     text-align: center;
     margin-left: 3%;
+    float: right;
 }
 
 .bigButton span {
@@ -108,16 +120,15 @@ section h1 {
 
 .buttonbar #fccBtn {
     background-image: url("img/fcc_logo_black.svg");
-    background-size: 18%;
+    background-size: 25%;
     background-repeat: no-repeat;
     background-position: 45% 25%;
-    padding-top: 2%;
-    font-size: .75em;
+    font-size: .8em;
+    padding-top: 22%;
 }
 
 .buttonbar #fccBtn:hover {
     background-image: url("img/fcc_logo_white.svg");
-    
 }
 
 .bigButton {
@@ -139,7 +150,7 @@ section h1 {
 }
 
 .buttonBar .bigButton {
-    width: 8%;
+    width: 70%;
     margin-left: 0;
 }
 
@@ -149,4 +160,13 @@ section h1 {
 
 #contact > p {
     margin-top: 0;
+}
+
+#contact .buttonbar {
+    float: none;
+}
+
+#contact .buttonBar .bigButton {
+    width: 9%;
+    display: inline;
 }
