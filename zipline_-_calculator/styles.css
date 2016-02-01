@@ -1,9 +1,17 @@
-#results li.pass
-{
-	color: green;
+table, td {
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
-#results li.fail
-{
-	color: red;
+table {
+    width: 400px;
+    height: 500px;  
+}
+
+td {
+    text-align: center;
+}
+
+#exprDisplay {
+    text-align: right;
 }

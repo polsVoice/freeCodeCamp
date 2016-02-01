@@ -1,4 +1,6 @@
 var calc = {
+    val: "",
+    expr: [],
     add: function( a, b ){
         return a + b;
     },
@@ -9,10 +11,18 @@ var calc = {
         return a * b;
     },
     divide: function(a, b){
-        return +(a/b).toFixed(6);
+        return +(a / b).toFixed(6);
+    },
+    display: function(){
+        $("#exprDisplay").text(this.id);
+        return calc.buildExpr(this.id);
+    },
+    buildExpr: function(val){
+        calc.expr.push(val);
+        return calc.expr;
     },
     init: function(){
-        console.log("Loaded");
+        $("td").click(calc.display);
     }
 };
 calc.init();

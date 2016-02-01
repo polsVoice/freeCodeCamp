@@ -50,4 +50,12 @@ describe("It can divide", function(){
     it("1/3", function(){
         expect(calc.divide(1, 3)).toBe(.333333);
     });
+    it("-4/5", function(){
+        expect(calc.divide(-4, 5)).toBe(-0.8);
+    });
+});
+describe("It displays the entered character", function(){
+    xit("displays the value", function(){
+        expect($("#exprDisplay").html()).toBe();
+    });
 });
