@@ -54,8 +54,26 @@ describe("It can divide", function(){
         expect(calc.divide(-4, 5)).toBe(-0.8);
     });
 });
-describe("It displays the entered character", function(){
-    xit("displays the value", function(){
-        expect($("#exprDisplay").html()).toBe();
+describe("It can display characters", function(){
+    var plus = {id: "plus"};
+    var minus = {id: "min"};
+    var mult = {id: "mult"};
+    var div = {id: "div"};
+    
+    it("plus", function(){
+        calc.display.call(plus);
+        expect($("#exprDisplay").text()).toBe("+");
+    });
+    it("minus", function(){
+        calc.display.call(minus);
+        expect($("#exprDisplay").text()).toBe("-");
+    });
+    it("multiply", function(){
+        calc.display.call(mult);
+        expect($("#exprDisplay").text()).toBe("x");
+    });
+    it("divide", function(){
+        calc.display.call(div);
+        expect($("#exprDisplay").text()).toBe("/");
     });
 });
