@@ -92,3 +92,33 @@ describe("It can display characters", function(){
         expect($("#exprDisplay").text()).toBe("0.2");
     });
 });
+describe("It can evaluate expressions", function(){
+    it("5+6", function(){
+        expect(calc.evalExpr(["5", "plus", "6"])).toBe(11);
+    });
+    it("-2+1", function(){
+        expect(calc.evalExpr(["-2", "plus", "1"])).toBe(-1);
+    });
+    it("22*2", function(){
+        expect(calc.evalExpr(["22", "mult", "2"])).toBe(44);
+    });
+    it("1/3", function(){
+        expect(calc.evalExpr(["1", "div", "3"])).toBe(0.333333);
+    });
+    it("-22/6", function(){
+        expect(calc.evalExpr(["-22", "div", "6"])).toBe(-3.666667);
+    });
+    it("-1--6", function(){
+        expect(calc.evalExpr(["-1", "min", "-6"])).toBe(5);
+    });
+});
+describe("It can clear the display", function(){
+    var spyEvent;
+    it("should invoke the clearDisplay method", function(){
+        spyEvent = spyOnEvent("#clear", "click");
+        $("#clear").trigger("click");
+        
+        expect("click").toHaveBeenTriggeredOn("#clear");
+        expect(spyEvent).toHaveBeenTriggered();
+    });
+});

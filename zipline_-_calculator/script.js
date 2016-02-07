@@ -56,16 +56,16 @@ var calc = {
                 return answer;
                 break;
             case "min":
-                expr = calc.subtract(+expr[0], +expr[2]);
-                return expr;
+                answer = calc.subtract(+expr[0], +expr[2]);
+                return answer;
                 break;
             case "mult":
-                expr = calc.multiply(+expr[0], +expr[2]);
-                return expr;
+                answer = calc.multiply(+expr[0], +expr[2]);
+                return answer;
                 break;
             case "div":
-                expr = calc.divide(+expr[0], +expr[2]);
-                return expr;
+                answer = calc.divide(+expr[0], +expr[2]);
+                return answer;
                 break;
         }
     },
