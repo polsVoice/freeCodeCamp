@@ -59,6 +59,9 @@ describe("It can display characters", function(){
     var minus = {id: "min"};
     var mult = {id: "mult"};
     var div = {id: "div"};
+    var one = {id: "1"};
+    var negFive = {id:"-5"};
+    var dec = {id:"0.2"};
     
     it("plus", function(){
         calc.display.call(plus);
@@ -75,5 +78,17 @@ describe("It can display characters", function(){
     it("divide", function(){
         calc.display.call(div);
         expect($("#exprDisplay").text()).toBe("/");
+    });
+    it("1", function(){
+        calc.display.call(one);
+        expect($("#exprDisplay").text()).toBe("1");
+    });
+    it("-5", function(){
+        calc.display.call(negFive);
+        expect($("#exprDisplay").text()).toBe("-5");
+    });
+    it("0.2", function(){
+        calc.display.call(dec);
+        expect($("#exprDisplay").text()).toBe("0.2");
     });
 });

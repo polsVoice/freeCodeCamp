@@ -15,7 +15,11 @@ var calc = {
     },
     display: function(){
         var dispVal;
+
         switch (this.id){
+            case "eq":
+                dispVal = calc.evalExpr(calc.expr);
+                break;
             case "plus":
                 dispVal = "+";
                 break;
@@ -28,23 +32,45 @@ var calc = {
             case "div":
                 dispVal = "/";
                 break;
+            default:
+                dispVal = this.id;
+                break;
         }
+        calc.buildExpr(this.id, calc.expr);
         $("#exprDisplay").text(dispVal);
-        //calc.buildExpr(this.id);
     },
-    buildExpr: function(val){
-        if (val === "="){
-            calc.evalExpr(calc.expr);
+    buildExpr: function(val, arr){
+        if (arr.length > 0 
+            && arr[arr.length-1] === "eq" 
+            && $.isNumeric(val)){
+                arr.length = 0;
         }
-        calc.expr.push(val);
+        arr.push.call(arr, val);
     },
     evalExpr: function(expr){
-        calc.expr.forEach(function(val, idx){
-            console.log("The " + idx + " value in the array is " + val);
-        });
+        var answer;
+        switch(expr[1]){
+            case "plus":
+                answer = calc.add(+expr[0], +expr[2]);
+                expr.length = 0;
+                return answer;
+                break;
+            case "min":
+                expr = calc.subtract(+expr[0], +expr[2]);
+                return expr;
+                break;
+            case "mult":
+                expr = calc.multiply(+expr[0], +expr[2]);
+                return expr;
+                break;
+            case "div":
+                expr = calc.divide(+expr[0], +expr[2]);
+                return expr;
+                break;
+        }
     },
     init: function(){
-        $("td").click(calc.display);
+        $("td").not("#exprDisplay").click(calc.display);
     }
 };
 calc.init();
