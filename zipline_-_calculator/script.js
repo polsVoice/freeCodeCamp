@@ -1,3 +1,8 @@
+// To-do
+// * Implement negative numbers
+// * Fix multiple symbol input (e.g -+, +*)
+// * strToNum
+
 var calc = {
     val: "",
     expr: [],
@@ -19,6 +24,7 @@ var calc = {
         switch (this.id){
             case "eq":
                 dispVal = calc.evalExpr(calc.expr);
+                calc.clearExpr();
                 break;
             case "plus":
                 dispVal = "+";
@@ -48,29 +54,60 @@ var calc = {
         arr.push.call(arr, val);
     },
     evalExpr: function(expr){
-        var answer;
-        switch(expr[1]){
-            case "plus":
-                answer = calc.add(+expr[0], +expr[2]);
-                expr.length = 0;
-                return answer;
-                break;
-            case "min":
-                answer = calc.subtract(+expr[0], +expr[2]);
-                return answer;
-                break;
-            case "mult":
-                answer = calc.multiply(+expr[0], +expr[2]);
-                return answer;
-                break;
-            case "div":
-                answer = calc.divide(+expr[0], +expr[2]);
-                return answer;
-                break;
+        var answer, modExpr = [], i, val;
+        
+        console.log(expr);
+        for (i = 0; i < expr.length; i++){
+            val = expr[i];
+            if (val === "mult" || val === "div"){
+                switch (val){
+                    case "mult":
+                        answer = calc.multiply(+expr[i-1], +expr[i+1]);
+                        expr.splice(i-1, 3, answer);
+                        i -= 2;
+                        console.log("expr is " + expr);
+                        break;
+                    case "div":
+                        answer = calc.divide(+expr[i-1], +expr[i+1]);
+                        expr.splice(i-1, 3, answer);
+                        i -= 2;
+                        console.log("expr is " + expr);
+                        break;
+                }
+            }
         }
+        
+        for (i = 0; i < expr.length; i++){
+            val = expr[i];
+            if (val === "plus" || val === "min"){
+                switch (val){
+                    case "plus":
+                        answer = calc.add(+expr[i-1], +expr[i+1]);
+                        expr.splice(i-1, 3, answer);
+                        i -= 2;
+                        console.log("expr is " + expr);
+                        break;
+                    case "min":
+                        answer = calc.subtract(+expr[i-1], +expr[i+1]);
+                        expr.splice(i-1, 3, answer);
+                        i -= 2;
+                        console.log("expr is " + expr);
+                        break;
+                }
+            }
+        }
+        return expr[0];
+    },
+    clearDisplay: function(){
+        $("#exprDisplay").text("");
+        calc.clearExpr();
+    },
+    clearExpr: function(){
+        calc.expr.length = 0;
     },
     init: function(){
         $("td").not("#exprDisplay").click(calc.display);
+        $("#clear").click(calc.clearDisplay);
     }
 };
 calc.init();

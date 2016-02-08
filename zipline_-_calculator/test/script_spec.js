@@ -112,13 +112,3 @@ describe("It can evaluate expressions", function(){
         expect(calc.evalExpr(["-1", "min", "-6"])).toBe(5);
     });
 });
-describe("It can clear the display", function(){
-    var spyEvent;
-    it("should invoke the clearDisplay method", function(){
-        spyEvent = spyOnEvent("#clear", "click");
-        $("#clear").trigger("click");
-        
-        expect("click").toHaveBeenTriggeredOn("#clear");
-        expect(spyEvent).toHaveBeenTriggered();
-    });
-});
