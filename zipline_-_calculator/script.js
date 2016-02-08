@@ -76,9 +76,7 @@ var calc = {
                 }
             }
         }
-        // test
-        //test
-        //test
+
         for (i = 0; i < expr.length; i++){
             val = expr[i];
             if (val === "plus" || val === "min"){
