@@ -1,3 +1,8 @@
+h1 {
+    font-family: "Tangerine", cursive;
+    text-align: center;
+}
+
 #theButton {
     margin: 3% 25% 2%;
 }
