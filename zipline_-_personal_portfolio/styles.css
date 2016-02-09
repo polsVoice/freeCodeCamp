@@ -100,6 +100,18 @@ section h1 {
 #contact {
     background-image: url( "img/the-season-2.jpg" );
     clear: both;
+    padding: 1% 2%;
+}
+
+#contact p {
+    background-color: #efefef;
+    padding: 1%;
+    border-radius: 0 0 18px 18px;
+}
+
+#contact p:first-of-type {
+    font-weight: bold;
+    border-radius: 18px 18px 0 0;
 }
 
 .buttonBar {
@@ -168,6 +180,7 @@ section h1 {
     display: flex;
     float: left;
     width: 45%;
+    display: none;
 }
 
 #contact .buttonBar #fccBtn {

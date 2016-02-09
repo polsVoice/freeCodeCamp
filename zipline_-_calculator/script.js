@@ -19,30 +19,41 @@ var calc = {
         return +(a / b).toFixed(6);
     },
     display: function(){
-        var dispVal;
-
-        switch (this.id){
-            case "eq":
-                dispVal = calc.evalExpr(calc.expr);
-                calc.clearExpr();
-                break;
-            case "plus":
-                dispVal = "+";
-                break;
-            case "min":
-                dispVal = "-";
-                break;
-            case "mult":
-                dispVal = "x";
-                break;
-            case "div":
-                dispVal = "/";
-                break;
-            default:
-                dispVal = this.id;
-                break;
+        var val = this.id, dispVal;
+        
+        if ($.isNumeric(+val)){
+            dispVal = $("#exprDisplay").data("num") || "";
+            dispVal += val;
+            $("#exprDisplay").data("num", dispVal);
+            console.log("The stored value is " + $("#exprDisplay").data("num"));
+        } else {
+            dispVal = $("#exprDisplay").data("num");
+            calc.expr = calc.buildExpr(dispVal, calc.expr);
+            $("#exprDisplay").data("num", "");
+        
+            switch (this.id){
+                case "eq":
+                    dispVal = calc.evalExpr(calc.expr);
+                    calc.clearExpr();
+                    break;
+                case "plus":
+                    dispVal = "+";
+                    break;
+                case "min":
+                    dispVal = "-";
+                    break;
+                case "mult":
+                    dispVal = "x";
+                    break;
+                case "div":
+                    dispVal = "/";
+                    break;
+                default:
+                    break;
+            }
+            calc.expr = calc.buildExpr(dispVal, calc.expr);
         }
-        calc.buildExpr(this.id, calc.expr);
+        
         $("#exprDisplay").text(dispVal);
     },
     buildExpr: function(val, arr){
@@ -51,23 +62,33 @@ var calc = {
             && $.isNumeric(val)){
                 arr.length = 0;
         }
+        
+        // Symbol replacement
+        // If user enters more than one non-numeric symbol in
+        // a row, then the new symbol replaces the old one
+        // e.g. 2 + * 3 = 2 * 3
+        if (!$.isNumeric(val)
+            && !$.isNumeric(arr[arr.length-1])){
+            arr.pop();
+        }
         arr.push.call(arr, val);
+        return arr;
     },
     evalExpr: function(expr){
-        var answer, modExpr = [], i, val;
+        var answer, i, val;
         
         console.log(expr);
         for (i = 0; i < expr.length; i++){
             val = expr[i];
-            if (val === "mult" || val === "div"){
+            if (val === "x" || val === "/"){
                 switch (val){
-                    case "mult":
+                    case "x":
                         answer = calc.multiply(+expr[i-1], +expr[i+1]);
                         expr.splice(i-1, 3, answer);
                         i -= 2;
                         console.log("expr is " + expr);
                         break;
-                    case "div":
+                    case "/":
                         answer = calc.divide(+expr[i-1], +expr[i+1]);
                         expr.splice(i-1, 3, answer);
                         i -= 2;
@@ -79,15 +100,15 @@ var calc = {
 
         for (i = 0; i < expr.length; i++){
             val = expr[i];
-            if (val === "plus" || val === "min"){
+            if (val === "+" || val === "-"){
                 switch (val){
-                    case "plus":
+                    case "+":
                         answer = calc.add(+expr[i-1], +expr[i+1]);
                         expr.splice(i-1, 3, answer);
                         i -= 2;
                         console.log("expr is " + expr);
                         break;
-                    case "min":
+                    case "-":
                         answer = calc.subtract(+expr[i-1], +expr[i+1]);
                         expr.splice(i-1, 3, answer);
                         i -= 2;

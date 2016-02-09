@@ -94,21 +94,25 @@ describe("It can display characters", function(){
 });
 describe("It can evaluate expressions", function(){
     it("5+6", function(){
-        expect(calc.evalExpr(["5", "plus", "6"])).toBe(11);
+        expect(calc.evalExpr(["5", "+", "6"])).toBe(11);
     });
     it("-2+1", function(){
-        expect(calc.evalExpr(["-2", "plus", "1"])).toBe(-1);
+        expect(calc.evalExpr(["-2", "+", "1"])).toBe(-1);
     });
     it("22*2", function(){
-        expect(calc.evalExpr(["22", "mult", "2"])).toBe(44);
+        expect(calc.evalExpr(["22", "x", "2"])).toBe(44);
     });
     it("1/3", function(){
-        expect(calc.evalExpr(["1", "div", "3"])).toBe(0.333333);
+        expect(calc.evalExpr(["1", "/", "3"])).toBe(0.333333);
     });
     it("-22/6", function(){
-        expect(calc.evalExpr(["-22", "div", "6"])).toBe(-3.666667);
+        expect(calc.evalExpr(["-22", "/", "6"])).toBe(-3.666667);
     });
     it("-1--6", function(){
-        expect(calc.evalExpr(["-1", "min", "-6"])).toBe(5);
+        expect(calc.evalExpr(["-1", "-", "-6"])).toBe(5);
+    });
+    it("2+2*4-1+3*2", function(){
+        expect(calc.evalExpr(["2", "+", "2", "x", "4", "-", "1",
+        "+", "3", "x", "2"])).toBe(15);
     });
 });
