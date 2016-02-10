@@ -1,7 +1,7 @@
 var pd = {
     seconds: "00",
     minutes: "25",
-    start: (minutes + ":" + seconds),
+    //start: (minutes + ":" + seconds),
     foo: "yo",
     time: function(){
     },
@@ -9,7 +9,7 @@ var pd = {
         var timer = document.getElementById("timer");
         var foo = "bar";
         timer.addEventListener("click", pd.time, false);
-        timer.textContent = this.start;
+        timer.textContent = this.minutes + ":" + this.seconds;
         console.log(pd.start);
         console.log(pd.seconds);
         console.log(pd.foo);
