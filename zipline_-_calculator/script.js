@@ -25,7 +25,6 @@ var calc = {
             dispVal = $("#exprDisplay").data("num") || "";
             dispVal += val;
             $("#exprDisplay").data("num", dispVal);
-            console.log("The stored value is " + $("#exprDisplay").data("num"));
         } else {
             dispVal = $("#exprDisplay").data("num");
             calc.expr = calc.buildExpr(dispVal, calc.expr);
@@ -77,7 +76,6 @@ var calc = {
     evalExpr: function(expr){
         var answer, i, val;
         
-        console.log(expr);
         for (i = 0; i < expr.length; i++){
             val = expr[i];
             if (val === "x" || val === "/"){
@@ -86,13 +84,11 @@ var calc = {
                         answer = calc.multiply(+expr[i-1], +expr[i+1]);
                         expr.splice(i-1, 3, answer);
                         i -= 2;
-                        console.log("expr is " + expr);
                         break;
                     case "/":
                         answer = calc.divide(+expr[i-1], +expr[i+1]);
                         expr.splice(i-1, 3, answer);
                         i -= 2;
-                        console.log("expr is " + expr);
                         break;
                 }
             }
@@ -106,13 +102,11 @@ var calc = {
                         answer = calc.add(+expr[i-1], +expr[i+1]);
                         expr.splice(i-1, 3, answer);
                         i -= 2;
-                        console.log("expr is " + expr);
                         break;
                     case "-":
                         answer = calc.subtract(+expr[i-1], +expr[i+1]);
                         expr.splice(i-1, 3, answer);
                         i -= 2;
-                        console.log("expr is " + expr);
                         break;
                 }
             }

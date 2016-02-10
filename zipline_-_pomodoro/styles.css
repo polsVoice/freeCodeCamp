@@ -1,0 +1,10 @@
+#clock {
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+}
+
+#timer {
+    margin: 60% 0 0 40%;
+}
