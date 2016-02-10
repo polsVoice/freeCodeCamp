@@ -1,0 +1,62 @@
+@import url(http://fonts.googleapis.com/css?family=Lora);
+@import url(http://fonts.googleapis.com/css?family=Special+Elite);
+
+.ui-widget
+{
+    font-family: "Lora", serif;
+}
+
+h1, h2 {
+    font-family: "Special Elite", cursive;
+}
+
+h1 { font-size: 300%; }
+
+nav
+{
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+div ul li
+{
+    margin-bottom: .5em;
+}
+
+nav ul
+{
+  width: 600px;
+  margin: 0 auto;
+}
+
+nav ul li
+{
+    display: inline;
+    padding: 6px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+nav ul li a
+{
+    text-decoration: none;
+}
+
+nav ul li:hover
+{
+    background-color: #07f5ed;
+}
+
+article
+{
+  border: 2px solid black;
+  padding: 1%;
+  border-radius: 8px;
+  margin-bottom: 1%;
+}
+
+#main_content
+{
+  margin: 0 auto;
+  width: 800px;
+}

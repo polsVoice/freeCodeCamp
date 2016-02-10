@@ -53,7 +53,7 @@ section h1 {
 
 #top {
     background-image: url( "img/the_season.jpg" );
-    height: 700px;
+    height: 450px;
 }
 
 #top, #projects {
@@ -62,15 +62,15 @@ section h1 {
 
 #top img {
     float: left;
-    margin: 3%;
-    height: 32%;
+    margin: 1% 2%;
+    height: 50%;
 }
 
 #top p {
     background-color: #d9edf7;
-    margin: 1.5% 17% 1.5% 12%;
+    margin: 1.5% 17% 1.5% 16%;
     border-radius: 10px;
-    padding: 1%;
+    padding: 4%;
     text-align: left;
 }
 
@@ -91,6 +91,17 @@ section h1 {
 
 .navbar-header .navbar-brand {
     font-size: 4em;
+}
+
+#portfolio {
+    padding-top: 2%;
+}
+
+#portfolio h1 {
+    margin: 0 .5em;
+    background-color: #5ae;
+    border-radius: 28px 0 28px;
+    padding: 1%;
 }
 
 #projects {
@@ -187,4 +198,8 @@ section h1 {
     padding-top: 2.25em;
     padding-left: 3.25em;
     font-size: 1em;
+}
+
+#contact.nav.navbar-nav {
+    float: none;
 }
