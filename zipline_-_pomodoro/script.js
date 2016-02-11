@@ -1,19 +1,18 @@
 var pd = {
-    seconds: "00",
-    minutes: "25",
-    //start: (minutes + ":" + seconds),
-    foo: "yo",
+    startSec: "00",
+    startMin: "25",
+    get seconds() {return Math.floor((this.seconds/1000)%60);},
+    get start() {return this.startMin + ":" + this.startSec;},
     time: function(){
     },
     init: function(){
         var timer = document.getElementById("timer");
         var foo = "bar";
         timer.addEventListener("click", pd.time, false);
-        timer.textContent = this.minutes + ":" + this.seconds;
-        console.log(pd.start);
-        console.log(pd.seconds);
-        console.log(pd.foo);
-        console.log(foo);
+        timer.textContent = pd.start;
+        setInterval(function(){
+            console.log("YO");
+        }, 1000);
     }
 };
 pd.init();
