@@ -151,8 +151,8 @@ section h1 {
     background-size: 20%;
     background-repeat: no-repeat;
     background-position: 8% 50%;
-    font-size: 1em;
-    padding: 10% 5% 10% 30%;
+    font-size: .75em;
+    padding-left: 25%;
 }
 
 .buttonBar #fccBtn:hover {
