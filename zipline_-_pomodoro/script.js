@@ -35,7 +35,7 @@ var pd = function(){
         init: function(){
             startSec = 60;
             $("#clock").toggleFunc(function(){
-                console.log("Hey");
+                $("#timer").text(setTime(startMin, startSec));
             }, function(){
                 console.log("Volgein");
             });
