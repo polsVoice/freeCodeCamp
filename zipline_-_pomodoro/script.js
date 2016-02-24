@@ -23,20 +23,37 @@ jQuery.fn.toggleFunc = function( func1, func2 ){
 var pd = function(){
     var startSec = "00",
         startMin = "25",
-        running = false;
-        
-    function setTime(min, sec){
-        return min + ":" + sec;
+        running = false,
+        timer = $("#timer");
+    
+    function stopClock(){
     }
     return {
-        updateClock: function(){
-            $(this).text(setTime(startMin, startSec));
+        setTime: function(min, sec){
+            return min + ":" + sec;
+        },
+        decrementTime: function(mins, secs){
+            if (secs === "00"){
+                setTimeout(function(){
+                    secs = "59";
+                }, 1000);
+                mins--;
+                return setTime(mins, secs);
+            }
+            secs--;
+            return setTime(mins, secs);
+        },
+        runClock: function(){
+            setInterval(this.decrementTime(startMin, startSec), 1000);
+        },
+        updateClock: function(str){
+            $(this).text(str);
         },
         init: function(){
-            startSec = 60;
-            $("#clock").toggleFunc(function(){
-                $("#timer").text(setTime(startMin, startSec));
-            }, function(){
+            
+            // use call() to make "this" the #timer object
+            this.updateClock.call(timer, this.setTime(startMin, startSec));
+            $("#clock").toggleFunc(this.runClock(startMin, startSec), function(){
                 console.log("Volgein");
             });
         }
