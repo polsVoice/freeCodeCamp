@@ -30,21 +30,8 @@ var pd = function(){
     }
     function startClock(){
         $("#timer").text(setTime(startMin, startSec));
-        setInterval(function(){
-            $("#timer").text(setTime(startMin, startSec));
-            startSec--;
-            if (+startSec < 10){
-                startSec = "0" + startSec;
-            }
-            if (startSec === "00"){
-                setTimeout(function(){
-                    startsec = "59";
-                    startMin--;
-                    $("#timer").text(setTime(startMin, startSec));
-                }, 1000);
-            }
-            console.log(startMin, startSec);
-        }, 1000);
+        var time = new Date();
+        $("#timer").text(time.getTime());
     }
     return {
         updateClock: function(){
