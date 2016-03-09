@@ -31,6 +31,18 @@ var pd = function(){
     function initClock(){
         $("#timer").text(setTime(startMin, startSec));
     }
+    function startClock(){
+        setInterval(function(){
+            startSec--;            
+            if (startSec === "00"){
+                setTimeout(function(){
+                    startSec = "59";
+                    $("#timer").text(setTime(startMin, startSec));
+                }, 1000);
+            }
+            $("#timer").text(setTime(startMin, startSec));
+        }, 1000);
+    }
     function stopClock(){
     }
     return {
