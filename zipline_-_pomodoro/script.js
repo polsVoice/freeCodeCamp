@@ -28,21 +28,18 @@ var pd = function(){
     function setTime(min, sec){
         return min + ":" + sec;
     }
-    function startClock(){
+    function initClock(){
         $("#timer").text(setTime(startMin, startSec));
-        var time = new Date();
-        $("#timer").text(time.getTime());
+    }
+    function stopClock(){
     }
     return {
         updateClock: function(){
             $(this).text(setTime(startMin, startSec));
         },
         init: function(){
-            startSec = 60;
-            startClock();
-            $("#clock").toggleFunc(startClock, function(){
-                console.log("Volgein");
-            });
+            initClock();
+            $("#clock").toggleFunc(startClock, stopClock);
         }
     }
 }();
