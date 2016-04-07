@@ -1,0 +1,9 @@
+.container {
+    background-color: #dedede;
+    margin: 3% 0 3% 4%;
+    border-radius: 8px;
+}
+
+.center {
+    margin: 0 auto;
+}

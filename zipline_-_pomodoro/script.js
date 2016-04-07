@@ -1,8 +1,8 @@
-jQuery.fn.toggleFunc = function( func1, func2 ){
-	return this.each( function(){
-		$( this ).click( function(){
-			var counter = $( this ).data( "counter" ) || 1;
-			switch( counter ){
+jQuery.fn.toggleFunc = function(func1, func2){
+	return this.each(function(){
+		$(this).click( function(){
+			var counter = $(this).data("counter") || 1;
+			switch(counter){
 				case 1:
 					func1();
 					break;
@@ -13,11 +13,11 @@ jQuery.fn.toggleFunc = function( func1, func2 ){
 					break;
 			}
 			counter++;
-			if ( counter > 2 ){
+			if (counter > 2){
 				counter = 1;
 			}
-			$( this ).data( "counter", counter );
-		} );
+			$(this).data("counter", counter);
+		});
 	});
 };
 var pd = function(){
@@ -26,6 +26,23 @@ var pd = function(){
         running = false,
         timer = $("#timer");
     
+    function stopClock(){
+    }
+    function initClock(){
+        $("#timer").text(setTime(startMin, startSec));
+    }
+    function startClock(){
+        setInterval(function(){
+            startSec--;            
+            if (startSec === "00"){
+                setTimeout(function(){
+                    startSec = "59";
+                    $("#timer").text(setTime(startMin, startSec));
+                }, 1000);
+            }
+            $("#timer").text(setTime(startMin, startSec));
+        }, 1000);
+    }
     function stopClock(){
     }
     return {
@@ -50,12 +67,17 @@ var pd = function(){
             $(this).text(str);
         },
         init: function(){
+<<<<<<< HEAD
             
             // use call() to make "this" the #timer object
             this.updateClock.call(timer, this.setTime(startMin, startSec));
             $("#clock").toggleFunc(this.runClock(startMin, startSec), function(){
                 console.log("Volgein");
             });
+=======
+            initClock();
+            $("#clock").toggleFunc(startClock, stopClock);
+>>>>>>> a503d4d0aac79f90e0e3111a150b2c665ac73648
         }
     }
 }();
