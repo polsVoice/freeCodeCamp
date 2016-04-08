@@ -1,9 +1,25 @@
+h1 {
+    text-align: center;
+}
+
+figure {
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 1em;
+}
+
+figcaption {
+    margin: 1.25em 0 0;
+}
+
 .container {
     background-color: #dedede;
     margin: 3% 0 3% 4%;
     border-radius: 8px;
 }
 
-.center {
-    margin: 0 auto;
+.info {
+    margin: 3% 25%;
 }
