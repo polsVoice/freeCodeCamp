@@ -66,18 +66,12 @@ var pd = function(){
         updateClock: function(str){
             $(this).text(str);
         },
-        init: function(){
-<<<<<<< HEAD
-            
+        init: function(){           
             // use call() to make "this" the #timer object
             this.updateClock.call(timer, this.setTime(startMin, startSec));
             $("#clock").toggleFunc(this.runClock(startMin, startSec), function(){
                 console.log("Volgein");
             });
-=======
-            initClock();
-            $("#clock").toggleFunc(startClock, stopClock);
->>>>>>> a503d4d0aac79f90e0e3111a150b2c665ac73648
         }
     }
 }();
