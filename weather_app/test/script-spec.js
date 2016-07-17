@@ -1,6 +1,8 @@
 describe("Geolocator", function(){
     it("can find your IP", function(done){
-      expect(weather.getLocation()).toEqual("174.21.43.111");
-      done();
+        weather.getLocation( function( data ){
+            expect( data.ip ).toBe( "73.97.174.175" )
+            done();
+        } );
     });
 });
