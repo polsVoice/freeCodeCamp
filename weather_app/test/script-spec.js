@@ -1,8 +1,8 @@
 describe("Geolocator", function(){
-    it("can find your IP", function(done){
-        weather.getLocation( function( data ){
-            expect( data.ip ).toBe( "73.97.174.175" )
-            done();
-        } );
-    });
-});
+    it("can find your ZIP code", function(done){
+       weather.getLocation( function( data ){
+           expect( data.zip ).toBe( "98105" );
+           done();
+       } );
+    } );
+} );
