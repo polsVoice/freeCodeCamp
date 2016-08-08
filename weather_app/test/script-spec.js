@@ -13,9 +13,15 @@ describe("Geolocator", function(){
     } );
 } );
 describe( "Weather", function(){
-    it( "can retrieve the weather", function( done ){
+    it( "can get location", function( done ){
         weather.getWeather( function( data ){
-            expect( data.weather ).toEqual( [{"id":701,"main":"Mist","description":"mist","icon":"50d"}] );
+            expect( data.name ).toBe( "Seattle" );
+            done();
+        } );
+    } );
+    it( "can get weather", function( done ){
+        weather.getWeather( function( data ){
+            expect( data.weather[ 0 ].description ).toBe( "scattered clouds" );
             done();
         } );
     } );
