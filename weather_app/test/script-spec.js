@@ -19,5 +19,4 @@ describe( "Weather", function(){
             done();
         } );
     } );
-  
 } );

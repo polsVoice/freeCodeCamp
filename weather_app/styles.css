@@ -1,0 +1,14 @@
+#icon {
+    height: 80px;
+    width: 80px;
+    border: 1px solid black;
+    background-image: url( "img/icons.svg" );
+}
+
+#icon.clear {
+    background-position: -628px -52px;
+}
+
+#icon.snow {
+    background-position: -392px -400px;
+}
