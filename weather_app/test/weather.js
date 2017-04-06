@@ -37,6 +37,7 @@ var weather = function(){
         },
         init: function(){
             "use strict";
+            console.log( "HI" );
             weather.getWeather( function( json ){
                 var myWeather = new Weather( json.name
                     , json.weather[ 0 ].main

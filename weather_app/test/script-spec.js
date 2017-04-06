@@ -12,13 +12,3 @@ describe("Geolocator", function(){
         } );
     } );
 } );
-describe( "Weather", function(){
-    it( "can get weather", function( done ){
-        weather.getWeather( function( data ){
-            var str = data.weather[ 0 ].main;
-            console.log( str );
-            expect( str ).toBe( "Rain" );
-            done();
-        } );
-    } );
-} );
