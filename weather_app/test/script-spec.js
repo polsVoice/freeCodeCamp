@@ -13,8 +13,15 @@ describe("Geolocator", function(){
     } );
 } );
 describe( "Weather display", function(){
-    it( "can display the weather", function(){
-        weather.display( "icy" );
-        expect( document.getElementById( 'weather' ).innerHTML ).toBe( 'icy' );
+    it( "can display a weather string", function(){
+        var element = weather.display( 'icy' );
+        expect( element.innerHTML ).toBe( 'icy' );
+    } );
+    it( "can display weather from JSON", function(done){
+        weather.getWeather( function( json ){
+            var element = weather.display( json.weather[ 0 ].main );
+            expect( element.innerHTML ).toBe( 'Rain' );
+            done();
+        } );
     } );
 } );

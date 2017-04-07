@@ -23,7 +23,7 @@ var weather = function(){
             var weatherTxt = document.createTextNode( str );
             weatherElm.id = 'weather';
             weatherElm.appendChild( weatherTxt );
-            document.body.appendChild( weatherElm );
+            return weatherElm;
         },
         getLocation: function( callback ){
             "use strict";
@@ -52,7 +52,7 @@ var weather = function(){
                     , json.weather[ 0 ].icon );
                 for ( var key in myWeather ){
                     if ( myWeather.hasOwnProperty( key ) ){
-                        display( key, myWeather[ key ] );
+                        weather.display( myWeather[ key ] );
                     }
                 }
             } );
