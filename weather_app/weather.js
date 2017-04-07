@@ -2,12 +2,6 @@ var weather = function(){
     "use strict";
     var key = config.MY_KEY;
     
-    function display( element, str ){
-        "use strict";
-        var $element = $( "#" + element );
-        $element.html( "<p>" + str + "</p>" );
-    }
-    
     function Weather( place, shortDesc, longDesc, icon ){
         "use strict";
         this.place = place;
@@ -51,8 +45,8 @@ var weather = function(){
                     , json.weather[ 0 ].description
                     , json.weather[ 0 ].icon );
                 for ( var key in myWeather ){
-                    if ( myWeather.hasOwnProperty( key ) ){
-                        weather.display( myWeather[ key ] );
+                    if ( key !== 'icon' && myWeather.hasOwnProperty( key ) ){
+                        document.body.appendChild( weather.display( myWeather[ key ] ) );
                     }
                 }
             } );
