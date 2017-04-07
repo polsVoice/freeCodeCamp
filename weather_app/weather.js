@@ -17,6 +17,14 @@ var weather = function(){
     }
     
     return {
+        display: function( str ){
+            "use strict";
+            var weatherElm = document.createElement( "p" );
+            var weatherTxt = document.createTextNode( str );
+            weatherElm.id = 'weather';
+            weatherElm.appendChild( weatherTxt );
+            document.body.appendChild( weatherElm );
+        },
         getLocation: function( callback ){
             "use strict";
             $.getJSON( "http://ip-api.com/json/", function( json ){

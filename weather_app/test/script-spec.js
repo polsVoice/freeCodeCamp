@@ -12,3 +12,9 @@ describe("Geolocator", function(){
         } );
     } );
 } );
+describe( "Weather display", function(){
+    it( "can display the weather", function(){
+        weather.display( "icy" );
+        expect( document.getElementById( 'weather' ).innerHTML ).toBe( 'icy' );
+    } );
+} );
